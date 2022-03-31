@@ -10,6 +10,4 @@ chrome.extension.sendMessage({}, function () {
 	for (let i = 0; i < images.length; i++) {
 		images[i].srcset = imageArray[Math.floor(Math.random() * (imageArray.length))];
 	};
-
-
 });
