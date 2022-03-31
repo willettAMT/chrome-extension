@@ -1,34 +1,24 @@
-chrome.extension.sendMessage({}, function (response) {
-	// const readyStateCheckInterval = setInterval(function() {
-	// if (document.readyState === "complete") {
-	// 	clearInterval(readyStateCheckInterval);
+chrome.extension.sendMessage({}, function () {
 
-	const images = document.getElementsByTagName('img');
-	// document.addEventListener('DOMContentLoaded', () => {
-	// 	for (let i = 0; i < images.length; i++) {
-	// 		images[i].srcset = "https://photos.google.com/share/AF1QipOxyphFJXKDTFlcg1vwNKfrUIKVw1F00NCx1u9LAfcNfvhHhqJzTy5eeXMeryGm6g/photo/AF1QipPRPV54THVaRSe5ya2rskrb-SDhjBLNSz73W6YW?key=ZnVFWi10emU2MllSbV9nNzdDRWtldkVDcUVtTzFn";
-	// 	}
-	// })
+
+	const imageArray = ["https://i.imgur.com/yJQySyu.jpg", "https://i.imgur.com/LkFrJeK.jpg", "https://i.imgur.com/KepRw7I.jpg", "https://i.imgur.com/IIEpZK3.jpg", "https://i.imgur.com/Yve9w1K.jpg", "https://i.imgur.com/N3aW4bL.jpg", "https://i.imgur.com/jI5DadO.jpg", "https://i.imgur.com/Qu5fmRh.jpg", "https://i.imgur.com/0YBfUwS.jpg", "https://i.imgur.com/I5q9mWp.jpg", "https://i.imgur.com/lz4WULX.jpg", "https://i.imgur.com/k9974BC.jpg", "https://i.imgur.com/mrmjWtk.jpg"];
+
+
+
+	let images = document.getElementsByTagName('img');
+
+	for (let i = 0; i < images.length; i++) {
+		images[i].srcset = imageArray[Math.floor(Math.random() * (imageArray.length))];
+	};
+
 	console.log(images)
 	// ----------------------------------------------------------
 	// This part of the script triggers when page is done loading
 	console.log("Hello world!!!!!!!");
-	document.addEventListener('DOMContentLoaded', () => alert("DOM ready!"))
 	// ----------------------------------------------------------
-	
 
-// OK... DEF GOING TO SLEEP NOW LOL - WE WILL HAVE TO FIGURE OUT HOW TO SHARE ALL THIS CODE..
-//	I REMEMBERED THAT THE PARTNER PULLS WEREN'T WORKING. GOODNIGHT THOUGH, FOR REAL.
 
 });
 // }, 10);
 // });
-
-document.addEventListener('DOMContentLoaded', () => alert("DOM ready!"))
-
-// function insertPhotos () {
-// 	if (document.readyState === "complete") {
-
-// 	}
-// }
 
